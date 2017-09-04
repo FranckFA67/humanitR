@@ -1,0 +1,92 @@
+
+
+body {
+    background-image: url('../img/head1.jepg');
+    background-size : cover;
+    position : fixed;
+    
+  
+}
+body {
+    font-family: Arial, sans-serif;
+    color: skyblue;
+}
+#don {
+    color:white;
+    font-style: bold;
+    background-color: red;
+    padding:10px 30px;
+
+}
+a {
+	color: white;
+	text-decoration: none;
+
+}
+
+a:hover {
+	color: white;
+}
+
+nav {
+	border-bottom: 4px solid skyblue;
+    display: flex;
+    justify-content:space-around;
+
+}
+
+/* Les ul */
+nav ul {
+    display: flex;
+	margin: 10px;
+	padding: 0;
+	list-style-type: none;
+ 
+    
+    
+}
+
+
+nav > ul > li > a {
+	font-weight: bold;
+	padding: 20px 30px;
+	color: skyblue;
+    
+	
+}
+
+nav > ul > li > a:hover {
+	color: white;
+	background-color: skyblue;
+
+}
+
+
+
+nav .menu {
+	display: none;
+	position: absolute;
+	background: rgba(100, 200, 250, 0.7);
+	left: 0;
+    right: 0;
+
+
+}
+
+
+nav ul li:hover .menu {
+	display: block;
+	border-radius: 10px;
+}
+
+
+
+
+.menu a {
+	line-height: 1.8;
+    border-radius: 10px;
+
+}
+
+
+
