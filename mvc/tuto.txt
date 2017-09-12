@@ -1,0 +1,4 @@
+/*
+apps/articles (au plurL)
+index.php verif et modif $acces
+*/

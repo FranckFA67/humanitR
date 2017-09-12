@@ -1,0 +1,17 @@
+fichier de traitement
+> traitement-user.php
+
+4 etape traitement 
+isset
+securité 
+traitement(insertion ds db ex)
+redirection)
+
+
+
+etape 0 $_post["action"]
+1-isset -isset login,email,pass
+
+2-securité=User manager
+3-traitement=(insertion ds db ex) : create
+4-redirection header ext

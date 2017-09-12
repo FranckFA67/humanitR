@@ -1,0 +1,20 @@
+<article>
+
+	<h1 class="center"><?=htmlentities($sponsor->getNom())?></h1>
+
+	<div class="details">
+	<?=htmlentities($sponsor->getDescription())?>
+	
+	<?=htmlentities($sponsor->getAdresse())?>
+
+	<?=htmlentities($sponsor->getParticipation())?>
+
+	
+</article>
+
+<?php
+foreach ($sponsors AS $sponsor)
+{
+	var_dump($sponsor);
+}
+?>

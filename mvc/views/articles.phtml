@@ -1,0 +1,22 @@
+<article>
+
+	<h1 class="center"><?=htmlentities($article->getTitle())?></h1>
+
+	<div class="details">
+	<?=$article->getDate()?>
+	
+	<?=htmlentities($article->getContent())?>
+
+	<?=htmlentities($article->getUser()->getNickname())?>
+
+	<img src="<?=htmlentities($article->getImages())?>">
+	</div>
+	
+</article>
+
+<?php
+foreach ($article->getComments() AS $comment)
+{
+	var_dump($comment);
+}
+?>

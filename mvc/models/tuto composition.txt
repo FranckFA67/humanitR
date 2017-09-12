@@ -1,0 +1,81 @@
+tuto Pour ajouter la composition :
+
+1 Ajouter les propriétés calculées dans votre Class
+
+ex
+private $author;// new UserManager(?) -> $db
+
+
+2 Ajouter la propriété $db
+	private $db;// $db -> obligatoire pour accéder au manager
+
+
+3 Ajouter le constructeur
+public function __construct($db)// <-- constructeur
+	{
+		$this->db = $db;
+	}
+
+4 Ajouter le getter et le setter correspondant
+public function getAuthor()// /!\
+	{
+		return $this->author;
+	}
+	public function setAuthor(User $author)// Type hinting : obliger le paramètre à être de la classe souhaitée
+	{
+		$this->author = $author;
+	}
+5 Supprimer/commenter le vieux getter, et le vieux setter (getId..., setId...)
+ex 	
+
+	/*
+	public function setIdAuthor($id_author)
+	{
+		$this->id_author = $id_author;
+	}
+	*//*
+	public function getIdAuthor()
+	{
+		return $this->id_author;
+	}
+	*/
+	----> à mettre en copmmentaire ou à supprimer
+6 Dans le setter, modifier la propriété calculée et la propriété sotckée ($this->author, $this->id_author)
+public function setAuthor(User $author)// Type hinting : obliger le paramètre à être de la classe souhaitée
+	{
+		$this->id_author = $author->getId();
+		$this->author = $author;
+	}
+7 Dans le getter, faites appel au manager correspondant (UserManager)
+public function getAuthor()// /!\
+	{
+		// $this->author == null
+		$manager = new UserManager($this->db);
+		$this->author = $manager->findById($this->id_author);
+		return $this->author;
+	}
+Dans le manager (ArticleManager) :
+
+8 Modifier dans la fonction create le new (new Article($this->db)) et rajouter le $db
+public function create($title, $content, $picture, $author)
+	{
+		$article = new Article($this->db);// <----
+		$article->setTitle($title);
+9 Modifier les find... et ajoutez le $db au constructeur (findById : ->fetchObject('Article', [$this->db]))
+public function findById($id)
+	{
+		$sql = "SELECT * FROM articles WHERE id=?";
+		$query = $this->db->prepare($sql);
+		$query->execute([$id]);
+		$article = $query->fetchObject('Article', [$this->db]);// <-----
+		return $article;
+	}public function findAll()
+	{
+		$sql = "SELECT * FROM articles";
+		$query = $this->db->prepare($sql);
+		$query->execute();
+		$articles = $query->fetchAll(PDO::FETCH_CLASS, 'Article', [$this->db]);// <-----
+		return $articles;
+	}
+10 Tester ! (yolo)
+11 Dans la vue : <?=$article->getAuthor()->getLogin()?>*/

@@ -1,0 +1,17 @@
+<article>
+
+	<h1 class="center"><?=htmlentities($association->getDescription())?></h1>
+
+	<div class="details">
+	<?=$association->getAdresse()?>
+	
+	<?=htmlentities($association->getNom())?>
+
+</article>
+
+<?php
+foreach ($associations AS $association)
+{
+	var_dump($associations);
+}
+?>

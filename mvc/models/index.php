@@ -9,10 +9,8 @@ function __autoload($classname)
 }
 $db = new PDO('mysql:dbname=humanitary;host=was138-desktop', 'humanitary', 'humanitary', [PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC]);
 
-$access = ['home', 'articles', 'create_article','associations',
-	'create_association', 'create_comment', 'create_sponsor', 'sponsors',
-	'create_user','inscription'];
-$page = 'home';
+$access = ['articles', 'create_article', 'create_association', 'create_comment', 'create_sponsor', 'create_user'];
+$page = 'articles';
 
 if (isset($_GET['page']))
 {

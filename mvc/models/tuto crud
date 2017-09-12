@@ -1,0 +1,24 @@
+//--------------------Manager------------------//
+//controle les échanges avec la bd
+//regrouper un bloc & les choses communes ensemble
+//faire plusieurs requetes afin d'afficher un article ou plusieur par ex
+//regroupe toute les requete qui concerne un un ser ou un article
+//-> plus simple de cibler des éléments. (afficher liste des postes/produits: )
+//2 lignes & 1 boucle
+//--------------CRUD------------------//
+
+//mise en place de la bd dans article.class.php
+//public function findById() seule fonction obligatoire
+//input nom: nom 
+//content
+//submit 
+//permet de crée modifier supprimer un article
+//id;
+
+
+
+
+read : find by id
+create : create
+delete
+update

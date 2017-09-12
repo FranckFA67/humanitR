@@ -61,49 +61,49 @@ class Users
 	{
 		$this->name = $name;
 	}
-	public function setNickname($nickname)
+	public function setNickname()
 	{
 		$this->nickname=$nickname;
 	}
-	public function setTelephone($telephone)
+	public function setTelephone()
 	{
 		$this->telephone=$telephone;
 	}
-	public function setAdresse($adresse)
+	public function setAdresse()
 	{
 		$this->adresse=$adresse;
 	}
-	public function setPassword($password)
+	public function setPassword()
 	{
 		$this->password=$password;
 	}
-	public function setEmail($email)
+	public function setEmail()
 	{
 		$this->email=$email;
 	}
 
-	//------------------crud--------------------------------
-	/*
-	public function setLogin($nickname)
-	{
-		ifstrlen($nickname)>= &&strlen($nickname) >= 63)
-			$this->login= $nickname;
-		else
-			throw new Exeption("veullez saisir un login entre 4 et 63 caractères");
-	}
-	public function setPassword($password)
-	{
-		if (strlen($password))> 6 && strlen($password) >=127)
-		$this->password;
-		else
-			throw new Exception("veullez saisir un login entre 6 et 127 caractères");
-	}
-	public function setEmail($email){
-		$this->email;
-	}*/
 }
 
 
 
+//------------------crud--------------------------------
+
+public function setLogin($nickname)
+{
+	ifstrlen($nickname)>= &&strlen($nickname) >= 63)
+		$this->login= $nickname;
+	else
+		throw new Exeption("veullez saisir un login entre 4 et 63 caractères");
+}
+public function setPassword($password)
+{
+	if (strlen($password))> 6 && strlen($password) >=127)
+	$this->password;
+	else
+		throw new Exception("veullez saisir un login entre 6 et 127 caractères");
+}
+public function setEmail($email){
+	$this->email;
+}
 
 ?>

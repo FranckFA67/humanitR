@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr">
-	<head>
-		<meta charset="utf-8">
-		<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
-		<link rel="stylesheet" href="./CSS/style.css">
-
-		<title>Action Humanitaire International ONG Humanitary International Action</title>
-
-	</head>
 
 	<header>
 		<div class="don">
@@ -17,12 +5,15 @@
 
 		</div>
 		<form class="subscribe">
-			<a id="subscribe" href="#"> Inscription </a>
-			<label>Identifiant</label>
-			<input>
-			<label>Mot de passe</label>
-			<input>
-			<button id="validate">valider</button>
+			<a id="subscribe" href="index.php?page=inscription"> Inscription</a>
+
+			<div class="bef"> Vous devez êtres inscrit pour accèder au privilèges </div>
+			<input id="id" placeholder="Identifiant">
+
+		
+			<input placeholder="Mot de passe">
+
+			<button id="validate" href="index.php?page=inscription">valider</button>
 		</form>
 		<h1 class="clear">Action <br>Humanitaire <br> Internationale</h1>
 
@@ -31,19 +22,21 @@
 		<nav class="menu">
 			<ul>
 				<li>
-					<a href="#">Accueil</a>
-					
-					<a href="#">Articles</a>
-				
-					<a href="#">Blog</a>
-
-					<a href="#">Qui Sommes nous ?</a>	
-
-					<a href="#">Liens utile</a>
-					
+					<a href="index.php?page=home">Accueil</a>
+				</li>
+				<li>
+					<a href="index.php?page=articles">Articles</a>
+				</li>
+				<li>
+					<a href="index.php?page=associations">Qui Sommes nous ?</a>	
+				</li>
+				<li>
+					<a href="index.php?page=sponsors">Liens utile</a>
+				</li>	
 				</li>
 			</ul>
 		</nav>
 
+
+
 	</header>
-	<main>
