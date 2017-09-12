@@ -4,16 +4,16 @@
 		<input id="don" type="button" value="FAIRE UN DON"/>
 
 		</div>
-		<form class="subscribe">
+		<form class="subscribe" method="POST">
 			<a id="subscribe" href="index.php?page=inscription"> Inscription</a>
 
 			<div class="bef"> Vous devez êtres inscrit pour accèder au privilèges </div>
-			<input id="id" placeholder="Identifiant">
+			<input type="text" name="nickname" placeholder="Identifiant">
 
 		
-			<input placeholder="Mot de passe">
+			<input type="password" name="password" placeholder="Mot de passe">
 
-			<button id="validate" href="index.php?page=inscription">valider</button>
+			<button type="submit" name="action" value="login">valider</button>
 		</form>
 		<h1 class="clear">Action <br>Humanitaire <br> Internationale</h1>
 

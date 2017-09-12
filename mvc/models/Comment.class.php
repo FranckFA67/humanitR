@@ -40,14 +40,14 @@ class Comment
 	}*/
 	public function getArticle()
 	{
-		$manager = new articleManager($this->db);
-		$this->author = $manager->findById($this->id_article);
-		//return $this->article;
+		$manager = new ArticleManager($this->db);
+		$this->article = $manager->findById($this->id_article);
+		return $this->article;
 	}
 	public function getUser()
 	{
 		$manager = new UserManager($this->db);
-		$this->author = $manager->findById($this->id_user);
+		$this->user = $manager->findById($this->id_user);
 		return $this->user;
 	}
 	public function getContent()

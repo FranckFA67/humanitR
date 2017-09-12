@@ -1,17 +1,29 @@
 <?php
 // title
 //comment
+var_dump($_POST);
+
 if (isset($_POST['action']))
 {
-	$action == $_POST['action'];
+	$action = $_POST['action'];
 	if ($action == 'create')
 	{
-		if (isset($_POST['id_article'], $_POST['id_user'], $_POST['content'], $_POST['date'], $_POST['state']))
+		if (isset($_POST['id_article'], $_SESSION['id'], $_POST['content']))
 		{
-			$manager = new CommentManager($db);
-			$manager = $manager->create($_POST['id_article'], $_POST['id_user'], $_POST['content'], ['date'], ['state']);
-			header("location: index.php?page=comment&id=id".$comment->getId());
-			exit;
+			$manager = new ArticleManager($db);
+			$article = $manager->findById($_POST['id_article']);
+			if ($article)
+			{
+				$manager = new UserManager($db);
+				$user = $manager->findById($_SESSION['id']);
+				if ($user)
+				{
+					$manager = new CommentManager($db);
+					$comment = $manager->create($article, $user, $_POST['content']);
+					header("location: index.php?page=article&id=".$comment->getArticle()->getId());
+					exit;
+				}
+			}
 		}
 	}
 }

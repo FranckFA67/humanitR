@@ -31,12 +31,15 @@ if (isset($_POST['action']))
 				if ($user->getPassword()==$_POST['password'])
 				{
 					// passDb==passpass $_POST
-					$_SESSION["id"]=$user->getID();
-					header();
+					$_SESSION["id"]=$user->getId();
+					header('Location: index.php');
 					exit;
 				}
-				header('Location: index.php?page=login');
-				exit;
+				else
+				{
+					header('Location: index.php?page=login');
+					exit;
+				}
 			}
 			else
 				$error = 'Nickname incorrect';

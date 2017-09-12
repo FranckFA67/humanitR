@@ -1,6 +1,6 @@
 <article>
 
-	<h1 class="center"><a href="index.php?page=article&id=<?=$article->getId()?>"><?=htmlentities($article->getTitle())?></a></h1>
+	<h1 class="center"><?=htmlentities($article->getTitle())?></h1>
 
 	<div class="details">
 	<?=$article->getDate()?>
@@ -13,3 +13,5 @@
 	</div>
 	
 </article>
+<?php require('apps/create_comment.php'); ?>
+<?php require('apps/comment_loop.php'); ?>

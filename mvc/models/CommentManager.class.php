@@ -26,22 +26,20 @@ class CommentManager
 		return $comment;
 	}
 
-	public function create()
+	public function create(Article $article, User $user, $content)
 	{
 
 		$comment = new Comment($this->db);
-		$comment->setIdArticle($id_article);
-		$comment->setIdUser($id_user);
+		$comment->setArticle($article);
+		$comment->setUser($user);
 		$comment->setContent($content);
-		$comment->setState($state);
 
-		$sql = "INSERT INTO comments (id_article, id_user, content, state) VALUES(?, ?, ?, ?)"; 
+		$sql = "INSERT INTO comments (id_article, id_user, content) VALUES(?, ?, ?)"; 
 		$query = $this->db->prepare($sql);
 		$query->execute([
-						$comment->getIdArticle(),
-						$comment->getIdUser(),
-						$comment->getContent(),
-						$comment->getState()]);
+						$comment->getArticle()->getId(),
+						$comment->getUser()->getId(),
+						$comment->getContent()]);
 		$id = $this->db->lastInsertId();
 		return $this->findById($id);
 	}
